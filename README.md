@@ -24,3 +24,8 @@ $ ionic cordova run ios
 
 Substitute ios for android if not on a Mac.
 
+`Commands to be remember`
+```bash
+$ ionic generate component
+```
+
