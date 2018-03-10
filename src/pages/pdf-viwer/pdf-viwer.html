@@ -9,12 +9,22 @@
   <ion-navbar>
     <ion-title>PDFViwer</ion-title>
   </ion-navbar>
-
+  <button ion-button icon-only (click)="movePage('backward')" style="margin-left: 40%">
+      <ion-icon name="arrow-back"></ion-icon>
+  </button>
+  <button ion-button icon-only (click)="movePage('forward')">
+      <ion-icon name="arrow-forward"></ion-icon>
+  </button>
+  <button ion-button icon-only (click)="search('Purpose')">
+      <ion-icon name="search"></ion-icon>
+  </button>
 </ion-header>
 
 
 <ion-content padding>
     <ion-content>
-        <pdf-viewer src="{{pdfUrl}}" original-size="false" show-all="true"></pdf-viewer>
+
+        <pdf-viewer [src]="pdfUrl" [render-text]="true" [show-all]="false" style="display: block;" 
+         [zoom]="1.5" [autoresize]="false" [fit-to-page]="true" [page]="pageNo" (error)="onPDFError($event)" (page-rendered)="pageRendered($event)"></pdf-viewer>
       </ion-content>
 </ion-content>
